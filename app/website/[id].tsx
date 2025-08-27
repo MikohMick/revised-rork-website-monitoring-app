@@ -43,10 +43,14 @@ export default function WebsiteDetailScreen() {
 
   const handleOpenWebsite = async () => {
     try {
-
       console.log(`[Terminal] > open ${website.url}`);
-      await Linking.openURL(website.url);
-    } catch {
+      const supported = await Linking.canOpenURL(website.url);
+      if (supported) {
+        await Linking.openURL(website.url);
+      } else {
+        Alert.alert('EXEC_ERROR', 'Cannot open this URL');
+      }
+    } catch (error) {
       Alert.alert('EXEC_ERROR', 'Failed to open browser');
     }
   };
