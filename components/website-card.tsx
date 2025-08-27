@@ -4,7 +4,7 @@ import { router } from 'expo-router';
 
 
 import { Website } from '@/types/database';
-import * as Haptics from 'expo-haptics';
+
 
 interface WebsiteCardProps {
   website: Website;
@@ -16,9 +16,7 @@ interface WebsiteCardProps {
 export function WebsiteCard({ website, onPress }: WebsiteCardProps) {
 
   const handlePress = () => {
-    if (Platform.OS !== 'web') {
-      Haptics.impactAsync(Haptics.ImpactFeedbackStyle.Light);
-    }
+
     if (onPress) {
       onPress();
     } else {

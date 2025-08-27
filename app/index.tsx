@@ -15,7 +15,7 @@ import { Stack, router } from 'expo-router';
 import { RefreshCw, Plus, Wifi, Loader } from 'lucide-react-native';
 import { useApp } from '@/contexts/app-context';
 import { WebsiteCard } from '@/components/website-card';
-import * as Haptics from 'expo-haptics';
+
 import { Website } from '@/types/database';
 
 export default function HomeScreen() {
@@ -46,9 +46,7 @@ export default function HomeScreen() {
   }, []);
 
   const onRefresh = async () => {
-    if (Platform.OS !== 'web') {
-      Haptics.impactAsync(Haptics.ImpactFeedbackStyle.Light);
-    }
+
     setRefreshing(true);
     await refreshAllStatuses();
     setRefreshing(false);

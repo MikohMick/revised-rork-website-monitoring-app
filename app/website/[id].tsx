@@ -7,12 +7,12 @@ import {
   ScrollView,
   Alert,
   Platform,
+  Linking,
 } from 'react-native';
 import { SafeAreaView, useSafeAreaInsets } from 'react-native-safe-area-context';
 import { Stack, useLocalSearchParams, router } from 'expo-router';
 import { ArrowLeft, Trash2, RefreshCw, Loader, ExternalLink, Terminal } from 'lucide-react-native';
-import * as WebBrowser from 'expo-web-browser';
-import * as Haptics from 'expo-haptics';
+
 import { useApp } from '@/contexts/app-context';
 import { Website } from '@/types/database';
 
@@ -43,11 +43,9 @@ export default function WebsiteDetailScreen() {
 
   const handleOpenWebsite = async () => {
     try {
-      if (Platform.OS !== 'web') {
-        Haptics.impactAsync(Haptics.ImpactFeedbackStyle.Light);
-      }
+
       console.log(`[Terminal] > open ${website.url}`);
-      await WebBrowser.openBrowserAsync(website.url);
+      await Linking.openURL(website.url);
     } catch {
       Alert.alert('EXEC_ERROR', 'Failed to open browser');
     }
@@ -58,9 +56,7 @@ export default function WebsiteDetailScreen() {
 
     setIsChecking(true);
     try {
-      if (Platform.OS !== 'web') {
-        Haptics.impactAsync(Haptics.ImpactFeedbackStyle.Medium);
-      }
+
       
       console.log(`[Terminal] > ping ${website.url}`);
       const result = await checkWebsiteStatus(website.url);
@@ -86,9 +82,7 @@ export default function WebsiteDetailScreen() {
           text: 'y',
           style: 'destructive',
           onPress: () => {
-            if (Platform.OS !== 'web') {
-              Haptics.impactAsync(Haptics.ImpactFeedbackStyle.Heavy);
-            }
+
             console.log(`[Terminal] > rm ${website.name}`);
             deleteWebsite(website.id);
             router.back();

@@ -13,7 +13,7 @@ import { SafeAreaView, useSafeAreaInsets } from 'react-native-safe-area-context'
 import { Stack, router } from 'expo-router';
 import { Plus, X, Terminal } from 'lucide-react-native';
 import { useApp } from '@/contexts/app-context';
-import * as Haptics from 'expo-haptics';
+
 
 interface WebsiteForm {
   name: string;
@@ -28,18 +28,14 @@ export default function AddWebsiteScreen() {
   ]);
 
   const addWebsiteForm = () => {
-    if (Platform.OS !== 'web') {
-      Haptics.impactAsync(Haptics.ImpactFeedbackStyle.Light);
-    }
+
     console.log('[Terminal] > add-target');
     setWebsites([...websites, { name: '', url: '' }]);
   };
 
   const removeWebsiteForm = (index: number) => {
     if (websites.length > 1) {
-      if (Platform.OS !== 'web') {
-        Haptics.impactAsync(Haptics.ImpactFeedbackStyle.Light);
-      }
+
       console.log(`[Terminal] > rm target_${String(index + 1).padStart(2, '0')}`);
       setWebsites(websites.filter((_, i) => i !== index));
     }
@@ -75,9 +71,7 @@ export default function AddWebsiteScreen() {
     }
 
     try {
-      if (Platform.OS !== 'web') {
-        Haptics.impactAsync(Haptics.ImpactFeedbackStyle.Medium);
-      }
+
 
       console.log('[Terminal] > exec add-website');
       for (const website of validWebsites) {
@@ -89,7 +83,7 @@ export default function AddWebsiteScreen() {
       }
 
       router.back();
-    } catch (error) {
+    } catch {
       Alert.alert('EXEC_ERROR', 'Failed to execute command. Retry?');
     }
   };
