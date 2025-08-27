@@ -1,0 +1,122 @@
+~/workspace$ npm install
+npm warn ERESOLVE overriding peer dependency
+npm warn While resolving: @react-native/virtualized-lists@0.76.6
+npm warn Found: @types/react@19.0.14
+npm warn node_modules/@types/react
+npm warn   dev @types/react@"~19.0.10" from the root project
+npm warn   2 more (@radix-ui/react-compose-refs, @radix-ui/react-slot)
+npm warn
+npm warn Could not resolve dependency:
+npm warn peerOptional @types/react@"^18.2.6" from @react-native/virtualized-lists@0.76.6
+npm warn node_modules/@react-native/virtualized-lists
+npm warn   @react-native/virtualized-lists@"0.76.6" from react-native@0.76.6
+npm warn   node_modules/react-native
+npm warn
+npm warn Conflicting peer dependency: @types/react@18.3.24
+npm warn node_modules/@types/react
+npm warn   peerOptional @types/react@"^18.2.6" from @react-native/virtualized-lists@0.76.6
+npm warn   node_modules/@react-native/virtualized-lists
+npm warn     @react-native/virtualized-lists@"0.76.6" from react-native@0.76.6
+npm warn     node_modules/react-native
+npm warn ERESOLVE overriding peer dependency
+npm warn While resolving: @react-navigation/bottom-tabs@7.4.6
+npm warn Found: @react-navigation/native@6.1.18
+npm warn node_modules/@react-navigation/native
+npm warn   @react-navigation/native@"^6.1.18" from the root project
+npm warn
+npm warn Could not resolve dependency:
+npm warn peer @react-navigation/native@"^7.1.17" from @react-navigation/bottom-tabs@7.4.6
+npm warn node_modules/@react-navigation/bottom-tabs
+npm warn   @react-navigation/bottom-tabs@"^7.3.10" from expo-router@5.0.7
+npm warn   node_modules/expo-router
+npm warn
+npm warn Conflicting peer dependency: @react-navigation/native@7.1.17
+npm warn node_modules/@react-navigation/native
+npm warn   peer @react-navigation/native@"^7.1.17" from @react-navigation/bottom-tabs@7.4.6
+npm warn   node_modules/@react-navigation/bottom-tabs
+npm warn     @react-navigation/bottom-tabs@"^7.3.10" from expo-router@5.0.7
+npm warn     node_modules/expo-router
+npm warn ERESOLVE overriding peer dependency
+npm warn While resolving: @react-navigation/elements@2.6.3
+npm warn Found: @react-navigation/native@6.1.18
+npm warn node_modules/@react-navigation/native
+npm warn   @react-navigation/native@"^6.1.18" from the root project
+npm warn
+npm warn Could not resolve dependency:
+npm warn peer @react-navigation/native@"^7.1.17" from @react-navigation/elements@2.6.3
+npm warn node_modules/@react-navigation/elements
+npm warn   @react-navigation/elements@"^2.6.3" from @react-navigation/bottom-tabs@7.4.6
+npm warn   node_modules/@react-navigation/bottom-tabs
+npm warn   1 more (@react-navigation/native-stack)
+npm warn
+npm warn Conflicting peer dependency: @react-navigation/native@7.1.17
+npm warn node_modules/@react-navigation/native
+npm warn   peer @react-navigation/native@"^7.1.17" from @react-navigation/elements@2.6.3
+npm warn   node_modules/@react-navigation/elements
+npm warn     @react-navigation/elements@"^2.6.3" from @react-navigation/bottom-tabs@7.4.6
+npm warn     node_modules/@react-navigation/bottom-tabs
+npm warn     1 more (@react-navigation/native-stack)
+npm warn ERESOLVE overriding peer dependency
+npm warn While resolving: @react-navigation/native-stack@7.3.25
+npm warn Found: @react-navigation/native@6.1.18
+npm warn node_modules/@react-navigation/native
+npm warn   @react-navigation/native@"^6.1.18" from the root project
+npm warn
+npm warn Could not resolve dependency:
+npm warn peer @react-navigation/native@"^7.1.17" from @react-navigation/native-stack@7.3.25
+npm warn node_modules/@react-navigation/native-stack
+npm warn   @react-navigation/native-stack@"^7.3.10" from expo-router@5.0.7
+npm warn   node_modules/expo-router
+npm warn
+npm warn Conflicting peer dependency: @react-navigation/native@7.1.17
+npm warn node_modules/@react-navigation/native
+npm warn   peer @react-navigation/native@"^7.1.17" from @react-navigation/native-stack@7.3.25
+npm warn   node_modules/@react-navigation/native-stack
+npm warn     @react-navigation/native-stack@"^7.3.10" from expo-router@5.0.7
+npm warn     node_modules/expo-router
+npm error code ERESOLVE
+npm error ERESOLVE could not resolve
+npm error
+npm error While resolving: react-native@0.76.6
+npm error Found: @types/react@19.0.14
+npm error node_modules/@types/react
+npm error   dev @types/react@"~19.0.10" from the root project
+npm error   peerOptional @types/react@"*" from @radix-ui/react-compose-refs@1.1.2
+npm error   node_modules/@radix-ui/react-compose-refs
+npm error     @radix-ui/react-compose-refs@"1.1.2" from @radix-ui/react-slot@1.2.0
+npm error     node_modules/@radix-ui/react-slot
+npm error       @radix-ui/react-slot@"1.2.0" from expo-router@5.0.7
+npm error       node_modules/expo-router
+npm error         expo-router@"~5.0.3" from the root project
+npm error   1 more (@radix-ui/react-slot)
+npm error
+npm error Could not resolve dependency:
+npm error peerOptional @types/react@"^18.2.6" from react-native@0.76.6
+npm error node_modules/react-native
+npm error   react-native@"0.76.6" from the root project
+npm error   peer react-native@"*" from expo@53.0.20
+npm error   node_modules/expo
+npm error     expo@"~53.0.0" from the root project
+npm error     7 more (expo-constants, expo-asset, expo-file-system, expo-font, ...)
+npm error   21 more (expo-constants, expo-asset, expo-file-system, ...)
+npm error
+npm error Conflicting peer dependency: @types/react@18.3.24
+npm error node_modules/@types/react
+npm error   peerOptional @types/react@"^18.2.6" from react-native@0.76.6
+npm error   node_modules/react-native
+npm error     react-native@"0.76.6" from the root project
+npm error     peer react-native@"*" from expo@53.0.20
+npm error     node_modules/expo
+npm error       expo@"~53.0.0" from the root project
+npm error       7 more (expo-constants, expo-asset, expo-file-system, expo-font, ...)
+npm error     21 more (expo-constants, expo-asset, expo-file-system, ...)
+npm error
+npm error Fix the upstream dependency conflict, or retry
+npm error this command with --force or --legacy-peer-deps
+npm error to accept an incorrect (and potentially broken) dependency resolution.
+npm error
+npm error
+npm error For a full report see:
+npm error /home/runner/.npm/_logs/2025-08-27T11_39_50_431Z-eresolve-report.txt
+npm error A complete log of this run can be found in: /home/runner/.npm/_logs/2025-08-27T11_39_50_431Z-debug-0.log
+~/workspace$ 
