@@ -1,0 +1,51 @@
+~/workspace$ git status
+On branch main
+Your branch is ahead of 'origin/main' by 17 commits.
+  (use "git push" to publish your local commits)
+
+nothing to commit, working tree clean
+~/workspace$ git log --oneline -5
+62bcae1 (HEAD -> main) Checkpoint before assistant change: Add project configuration and dependencies for EAS build
+2d8ea8d Assistant checkpoint: Fix Android package name validation
+9a7d7e8 Checkpoint before assistant change: Add support for asynchronous operations and new ports
+88ef228 Checkpoint before assistant change: Update project dependencies and adjust port configurations for Expo
+9b1819f Checkpoint before assistant change: Update project dependencies and configuration settings
+~/workspace$ git remote -v
+origin  https://github.com/MikohMick/revised-rork-website-monitoring-app (fetch)
+origin  https://github.com/MikohMick/revised-rork-website-monitoring-app (push)
+~/workspace$ git ls-files
+.env
+.gitignore
+.replit
+DEPENDENCY_FIX_GUIDE.md
+README.md
+app.json
+app/+not-found.tsx
+app/_layout.tsx
+app/add-website.tsx
+app/index.tsx
+app/website/[id].tsx
+assets/images/adaptive-icon.png
+assets/images/favicon.png
+assets/images/icon.png
+assets/images/splash-icon.png
+attached_assets/Pasted--Log-1-of-5-Uncaught-Error-0-react-1-use-is-not-a-function-Call-Stack-Source-Map-This--1756297174089_1756297174090.txt
+attached_assets/Pasted--workspace-npm-install-npm-warn-ERESOLVE-overriding-peer-dependency-npm-warn-While-resolving-r-1756294819609_1756294819617.txt
+attached_assets/Pasted-Error-Unable-to-resolve-module-replco-static-devtools-eruda-3-2-3-eruda-from-home-runner-works-1756297845714_1756297845714.txt
+attached_assets/Pasted-Error-Unable-to-resolve-module-replco-static-devtools-eruda-3-2-3-eruda-from-home-runner-works-1756299911709_1756299911710.txt
+attached_assets/Pasted-Uncaught-Error-Failed-to-fetch-Call-Stack-Source-Map-This-call-stack-is-not-symbolicated-Some-1756298092708_1756298092709.txt
+attached_assets/Pasted-env-load-env-env-export-EXPO-PUBLIC-SUPABASE-URL-EXPO-PUBLIC-SUPABASE-ANON-KEY-Starting-Metro-B-1756317093324_1756317093326.txt
+babel.config.js
+components/error-boundary.tsx
+components/status-indicator.tsx
+components/website-card.tsx
+contexts/app-context.tsx
+eas.json
+lib/supabase.ts
+metro.config.js
+package-lock.json
+package.json
+supabase-setup.sql
+tsconfig.json
+types/database.ts
+~/workspace$ 
