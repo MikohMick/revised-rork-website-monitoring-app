@@ -1,0 +1,38 @@
+env: load .env
+env: export EXPO_PUBLIC_SUPABASE_URL EXPO_PUBLIC_SUPABASE_ANON_KEY
+Starting Metro Bundler
+Error: Unable to resolve module expo/src/launch/registerRootComponent from /home/expo/workingdir/build/node_modules/expo/AppEntry.js: expo/src/launch/registerRootComponent could not be found within the project.
+> 1 | import registerRootComponent from 'expo/src/launch/registerRootComponent';
+    |                                    ^
+  2 |
+  3 | import App from '../../App';
+  4 |
+Error: Unable to resolve module expo/src/launch/registerRootComponent from /home/expo/workingdir/build/node_modules/expo/AppEntry.js: expo/src/launch/registerRootComponent could not be found within the project.
+> 1 | import registerRootComponent from 'expo/src/launch/registerRootComponent';
+    |                                    ^
+  2 |
+  3 | import App from '../../App';
+  4 |
+    at ModuleResolver.resolveDependency (/home/expo/workingdir/build/node_modules/metro/src/node-haste/DependencyGraph/ModuleResolution.js:150:15)
+    at DependencyGraph.resolveDependency (/home/expo/workingdir/build/node_modules/metro/src/node-haste/DependencyGraph.js:239:43)
+    at /home/expo/workingdir/build/node_modules/metro/src/lib/transformHelpers.js:161:21
+    at resolveDependencies (/home/expo/workingdir/build/node_modules/metro/src/DeltaBundler/buildSubgraph.js:43:25)
+    at visit (/home/expo/workingdir/build/node_modules/metro/src/DeltaBundler/buildSubgraph.js:81:30)
+    at async Promise.all (index 0)
+    at buildSubgraph (/home/expo/workingdir/build/node_modules/metro/src/DeltaBundler/buildSubgraph.js:105:3)
+    at Graph._buildDelta (/home/expo/workingdir/build/node_modules/metro/src/DeltaBundler/Graph.js:158:22)
+    at Graph.initialTraverseDependencies (/home/expo/workingdir/build/node_modules/metro/src/DeltaBundler/Graph.js:141:19)
+    at DeltaCalculator._getChangedDependencies (/home/expo/workingdir/build/node_modules/metro/src/DeltaBundler/DeltaCalculator.js:151:25)
+    at DeltaCalculator.getDelta (/home/expo/workingdir/build/node_modules/metro/src/DeltaBundler/DeltaCalculator.js:68:16)
+    at DeltaBundler.buildGraph (/home/expo/workingdir/build/node_modules/metro/src/DeltaBundler.js:33:5)
+    at IncrementalBundler.buildGraphForEntries (/home/expo/workingdir/build/node_modules/metro/src/IncrementalBundler.js:54:19)
+    at IncrementalBundler.buildGraph (/home/expo/workingdir/build/node_modules/metro/src/IncrementalBundler.js:134:19)
+    at /home/expo/workingdir/build/node_modules/metro/src/IncrementalBundler.js:172:34
+    at IncrementalBundler.initializeGraph (/home/expo/workingdir/build/node_modules/metro/src/IncrementalBundler.js:189:24)
+    at MetroBundlerDevServer._bundleDirectAsync (/home/expo/workingdir/build/node_modules/@expo/cli/src/start/server/metro/MetroBundlerDevServer.ts:1553:25)
+    at MetroBundlerDevServer.metroLoadModuleContents (/home/expo/workingdir/build/node_modules/@expo/cli/src/start/server/metro/MetroBundlerDevServer.ts:551:21)
+    at MetroBundlerDevServer.legacySinglePageExportBundleAsync (/home/expo/workingdir/build/node_modules/@expo/cli/src/start/server/metro/MetroBundlerDevServer.ts:867:20)
+    at exportEmbedBundleAndAssetsAsync (/home/expo/workingdir/build/node_modules/@expo/cli/src/export/embed/exportEmbedAsync.ts:206:21)
+    at exportEmbedInternalAsync (/home/expo/workingdir/build/node_modules/@expo/cli/src/export/embed/exportEmbedAsync.ts:137:37)
+    at exportEmbedAsync (/home/expo/workingdir/build/node_modules/@expo/cli/src/export/embed/exportEmbedAsync.ts:117:3)
+npx expo export:embed --eager --platform android --dev false exited with non-zero code: 1
