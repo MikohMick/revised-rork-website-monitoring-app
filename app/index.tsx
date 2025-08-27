@@ -106,7 +106,7 @@ export default function HomeScreen() {
     header: {
       backgroundColor: '#000000',
       paddingHorizontal: 16,
-      paddingVertical: 4,
+      paddingVertical: 2,
       borderBottomWidth: 1,
       borderBottomColor: '#333333',
     },
@@ -114,7 +114,7 @@ export default function HomeScreen() {
       flexDirection: 'row',
       justifyContent: 'space-between',
       alignItems: 'center',
-      marginBottom: 4,
+      marginBottom: 2,
     },
     headerTitle: {
       fontSize: 20,
@@ -146,7 +146,6 @@ export default function HomeScreen() {
     headerActions: {
       flexDirection: 'row',
       alignItems: 'center',
-      marginTop: 4,
     },
     headerIconButton: {
       paddingHorizontal: 12,
@@ -373,7 +372,7 @@ export default function HomeScreen() {
     <SafeAreaView style={styles.container}>
       <Stack.Screen options={{ headerShown: false }} />
       
-      <View style={[styles.header, { paddingTop: Math.max(4, insets.top), paddingLeft: Math.max(16, insets.left), paddingRight: Math.max(16, insets.right) }]} testID="header">
+      <View style={[styles.header, { paddingTop: insets.top, paddingLeft: Math.max(16, insets.left), paddingRight: Math.max(16, insets.right) }]} testID="header">
         <View style={styles.headerTop} testID="headerTop">
           <Text style={styles.headerTitle}>WEBSITE_MONITOR v1.0</Text>
           <View style={styles.headerInfo} testID="headerInfo">
