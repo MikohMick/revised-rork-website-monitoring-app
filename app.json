@@ -15,14 +15,14 @@
     },
     "ios": {
       "supportsTablet": true,
-      "bundleIdentifier": "app.rork.website-monitoring-app-wg2ybyp"
+      "bundleIdentifier": "app.rork.websitemonitoringapp"
     },
     "android": {
       "adaptiveIcon": {
         "foregroundImage": "./assets/images/adaptive-icon.png",
         "backgroundColor": "#ffffff"
       },
-      "package": "app.rork.website-monitoring-app-wg2ybyp",
+      "package": "app.rork.websitemonitoringapp",
       "permissions": [
         "android.permission.VIBRATE"
       ]
