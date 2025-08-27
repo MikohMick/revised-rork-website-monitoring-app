@@ -9,6 +9,17 @@ config.resolver.alias = {
   'react-native': 'react-native-web',
 };
 
+// Add specific resolution for @babel/runtime
+config.resolver.resolveRequest = (context, moduleName, platform) => {
+  if (moduleName.startsWith('@babel/runtime/')) {
+    return {
+      filePath: require.resolve(moduleName),
+      type: 'sourceFile',
+    };
+  }
+  return context.resolveRequest(context, moduleName, platform);
+};
+
 // Block problematic Replit imports
 config.resolver.resolverMainFields = ['react-native', 'browser', 'main'];
 config.resolver.disableHierarchicalLookup = true;
