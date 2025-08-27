@@ -10,7 +10,7 @@ import {
 } from 'react-native';
 import { SafeAreaView, useSafeAreaInsets } from 'react-native-safe-area-context';
 import { Stack, useLocalSearchParams, router } from 'expo-router';
-import { ExternalLink, RefreshCw, Trash2, Terminal, Activity, ArrowLeft } from 'lucide-react-native';
+import { Ionicons } from '@expo/vector-icons';
 import * as WebBrowser from 'expo-web-browser';
 import * as Haptics from 'expo-haptics';
 import { useApp } from '@/contexts/app-context';
@@ -167,7 +167,7 @@ export default function WebsiteDetailScreen() {
               hitSlop={{ top: 10, bottom: 10, left: 10, right: 10 }}
               testID="backButton"
             >
-              <ArrowLeft size={22} color="#00ff00" />
+              <Ionicons name="arrow-back" size={22} color="#00ff00" />
             </TouchableOpacity>
           ),
           headerRight: () => (
@@ -177,10 +177,7 @@ export default function WebsiteDetailScreen() {
               disabled={isDeletingWebsite}
               testID="deleteButton"
             >
-              <Trash2
-                size={22}
-                color={isDeletingWebsite ? '#555555' : '#ff6b6b'}
-              />
+              <Ionicons name="trash" size={22} color={isDeletingWebsite ? '#555555' : '#ff6b6b'} />
             </TouchableOpacity>
           ),
         }}
@@ -212,9 +209,9 @@ export default function WebsiteDetailScreen() {
                 testID="pingButton"
               >
                 {isChecking || isUpdatingStatus ? (
-                  <Activity size={16} color="#ffb000" />
+                  <Ionicons name="ellipse" size={16} color="#ffb000" />
                 ) : (
-                  <RefreshCw size={16} color="#00ff00" />
+                  <Ionicons name="refresh" size={16} color="#00ff00" />
                 )}
                 <Text style={styles.refreshText}>
                   {isChecking || isUpdatingStatus ? 'PINGING...' : 'PING'}
@@ -279,11 +276,11 @@ export default function WebsiteDetailScreen() {
               style={styles.actionButton}
               onPress={handleOpenWebsite}
             >
-              <Terminal size={16} color="#00ff00" />
+              <Ionicons name="terminal" size={16} color="#00ff00" />
               <Text style={styles.actionButtonText}>
                 OPEN_BROWSER
               </Text>
-              <ExternalLink size={14} color="#808080" />
+              <Ionicons name="open-outline" size={14} color="#808080" />
             </TouchableOpacity>
           </View>
         </View>
