@@ -29,13 +29,6 @@ export const testSupabaseConnection = async (): Promise<{ success: boolean; erro
   try {
     console.log('[Supabase] Testing connection...');
     
-    if (Platform.OS === 'web') {
-      // On web, we'll simulate a successful connection for now
-      // since CORS restrictions prevent direct database access
-      console.log('[Supabase] Web platform detected - using mock data');
-      return { success: true };
-    }
-    
     const { error, count } = await supabase
       .from('websites')
       .select('id', { count: 'exact', head: true });

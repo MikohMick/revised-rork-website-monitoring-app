@@ -102,7 +102,7 @@ export default function HomeScreen() {
       case 'connected':
         return 'DB_ONLINE';
       case 'disconnected':
-        return 'LOCAL_MODE';
+        return 'DB_OFFLINE';
       case 'checking':
         return 'CONNECTING';
       default:
@@ -340,8 +340,7 @@ export default function HomeScreen() {
       </View>
 
       <ScrollView
-        style={[styles.content, { paddingHorizontal: Math.max(16, insets.left), }]
-        }
+        style={[styles.content, { paddingHorizontal: Math.max(16, insets.left) }]}
         contentContainerStyle={{ paddingBottom: 96 + insets.bottom, paddingRight: Math.max(16, insets.right) }}
         refreshControl={
           <RefreshControl 
