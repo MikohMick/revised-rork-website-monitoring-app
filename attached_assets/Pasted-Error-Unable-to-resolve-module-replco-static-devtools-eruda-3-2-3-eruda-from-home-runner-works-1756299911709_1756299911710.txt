@@ -1,0 +1,68 @@
+Error: Unable to resolve module ./__replco/static/devtools/eruda/3.2.3/eruda from /home/runner/workspace/.: 
+
+None of these files exist:
+  * __replco/static/devtools/eruda/3.2.3/eruda(.web.ts|.ts|.web.tsx|.tsx|.web.mjs|.mjs|.web.js|.js|.web.jsx|.jsx|.web.json|.json|.web.cjs|.cjs|.web.scss|.scss|.web.sass|.sass|.web.css|.css|.web.js|.js|.web.jsx|.jsx|.web.ts|.ts|.web.tsx|.tsx|.web.json|.json)
+  * __replco/static/devtools/eruda/3.2.3/eruda
+    at ModuleResolver.resolveDependency (/home/runner/workspace/.config/npm/node_global/lib/node_modules/expo/node_modules/metro/src/node-haste/DependencyGraph/ModuleResolution.js:114:15)
+    at DependencyGraph.resolveDependency (/home/runner/workspace/.config/npm/node_global/lib/node_modules/expo/node_modules/metro/src/node-haste/DependencyGraph.js:239:43)
+    at /home/runner/workspace/.config/npm/node_global/lib/node_modules/expo/node_modules/metro/src/lib/transformHelpers.js:161:21
+    at Server._resolveRelativePath (/home/runner/workspace/.config/npm/node_global/lib/node_modules/expo/node_modules/metro/src/Server.js:1157:12)
+    at Server._explodedSourceMapForBundleOptions (/home/runner/workspace/.config/npm/node_global/lib/node_modules/expo/node_modules/metro/src/Server.js:1105:35)
+    at async Promise.all (index 0)
+    at Server._symbolicate (/home/runner/workspace/.config/npm/node_global/lib/node_modules/expo/node_modules/metro/src/Server.js:1062:26)
+    at Server._processRequest (/home/runner/workspace/.config/npm/node_global/lib/node_modules/expo/node_modules/metro/src/Server.js:460:7)
+Web Bundled 119ms node_modules/expo-router/entry.js (1 module)
+Web Bundled 105ms node_modules/expo-router/entry.js (1 module)
+ LOG  [web] Logs will appear in the browser console
+Error: Unable to resolve module ./__replco/static/devtools/eruda/3.2.3/eruda from /home/runner/workspace/.: 
+
+None of these files exist:
+  * __replco/static/devtools/eruda/3.2.3/eruda(.web.ts|.ts|.web.tsx|.tsx|.web.mjs|.mjs|.web.js|.js|.web.jsx|.jsx|.web.json|.json|.web.cjs|.cjs|.web.scss|.scss|.web.sass|.sass|.web.css|.css|.web.js|.js|.web.jsx|.jsx|.web.ts|.ts|.web.tsx|.tsx|.web.json|.json)
+  * __replco/static/devtools/eruda/3.2.3/eruda
+    at ModuleResolver.resolveDependency (/home/runner/workspace/.config/npm/node_global/lib/node_modules/expo/node_modules/metro/src/node-haste/DependencyGraph/ModuleResolution.js:114:15)
+    at DependencyGraph.resolveDependency (/home/runner/workspace/.config/npm/node_global/lib/node_modules/expo/node_modules/metro/src/node-haste/DependencyGraph.js:239:43)
+    at /home/runner/workspace/.config/npm/node_global/lib/node_modules/expo/node_modules/metro/src/lib/transformHelpers.js:161:21
+    at Server._resolveRelativePath (/home/runner/workspace/.config/npm/node_global/lib/node_modules/expo/node_modules/metro/src/Server.js:1157:12)
+    at Server._explodedSourceMapForBundleOptions (/home/runner/workspace/.config/npm/node_global/lib/node_modules/expo/node_modules/metro/src/Server.js:1105:35)
+    at async Promise.all (index 0)
+    at Server._symbolicate (/home/runner/workspace/.config/npm/node_global/lib/node_modules/expo/node_modules/metro/src/Server.js:1062:26)
+    at Server._processRequest (/home/runner/workspace/.config/npm/node_global/lib/node_modules/expo/node_modules/metro/src/Server.js:460:7)
+Error: Unable to resolve module ./__replco/static/devtools/eruda/3.2.3/eruda from /home/runner/workspace/.: 
+
+None of these files exist:
+  * __replco/static/devtools/eruda/3.2.3/eruda(.web.ts|.ts|.web.tsx|.tsx|.web.mjs|.mjs|.web.js|.js|.web.jsx|.jsx|.web.json|.json|.web.cjs|.cjs|.web.scss|.scss|.web.sass|.sass|.web.css|.css|.web.js|.js|.web.jsx|.jsx|.web.ts|.ts|.web.tsx|.tsx|.web.json|.json)
+  * __replco/static/devtools/eruda/3.2.3/eruda
+    at ModuleResolver.resolveDependency (/home/runner/workspace/.config/npm/node_global/lib/node_modules/expo/node_modules/metro/src/node-haste/DependencyGraph/ModuleResolution.js:114:15)
+    at DependencyGraph.resolveDependency (/home/runner/workspace/.config/npm/node_global/lib/node_modules/expo/node_modules/metro/src/node-haste/DependencyGraph.js:239:43)
+    at /home/runner/workspace/.config/npm/node_global/lib/node_modules/expo/node_modules/metro/src/lib/transformHelpers.js:161:21
+    at Server._resolveRelativePath (/home/runner/workspace/.config/npm/node_global/lib/node_modules/expo/node_modules/metro/src/Server.js:1157:12)
+    at Server._explodedSourceMapForBundleOptions (/home/runner/workspace/.config/npm/node_global/lib/node_modules/expo/node_modules/metro/src/Server.js:1105:35)
+    at async Promise.all (index 0)
+    at Server._symbolicate (/home/runner/workspace/.config/npm/node_global/lib/node_modules/expo/node_modules/metro/src/Server.js:1062:26)
+    at Server._processRequest (/home/runner/workspace/.config/npm/node_global/lib/node_modules/expo/node_modules/metro/src/Server.js:460:7)
+Error: Unable to resolve module ./__replco/static/devtools/eruda/3.2.3/eruda from /home/runner/workspace/.: 
+
+None of these files exist:
+  * __replco/static/devtools/eruda/3.2.3/eruda(.web.ts|.ts|.web.tsx|.tsx|.web.mjs|.mjs|.web.js|.js|.web.jsx|.jsx|.web.json|.json|.web.cjs|.cjs|.web.scss|.scss|.web.sass|.sass|.web.css|.css|.web.js|.js|.web.jsx|.jsx|.web.ts|.ts|.web.tsx|.tsx|.web.json|.json)
+  * __replco/static/devtools/eruda/3.2.3/eruda
+    at ModuleResolver.resolveDependency (/home/runner/workspace/.config/npm/node_global/lib/node_modules/expo/node_modules/metro/src/node-haste/DependencyGraph/ModuleResolution.js:114:15)
+    at DependencyGraph.resolveDependency (/home/runner/workspace/.config/npm/node_global/lib/node_modules/expo/node_modules/metro/src/node-haste/DependencyGraph.js:239:43)
+    at /home/runner/workspace/.config/npm/node_global/lib/node_modules/expo/node_modules/metro/src/lib/transformHelpers.js:161:21
+    at Server._resolveRelativePath (/home/runner/workspace/.config/npm/node_global/lib/node_modules/expo/node_modules/metro/src/Server.js:1157:12)
+    at Server._explodedSourceMapForBundleOptions (/home/runner/workspace/.config/npm/node_global/lib/node_modules/expo/node_modules/metro/src/Server.js:1105:35)
+    at async Promise.all (index 0)
+    at Server._symbolicate (/home/runner/workspace/.config/npm/node_global/lib/node_modules/expo/node_modules/metro/src/Server.js:1062:26)
+    at Server._processRequest (/home/runner/workspace/.config/npm/node_global/lib/node_modules/expo/node_modules/metro/src/Server.js:460:7)
+Error: Unable to resolve module ./__replco/static/devtools/eruda/3.2.3/eruda from /home/runner/workspace/.: 
+
+None of these files exist:
+  * __replco/static/devtools/eruda/3.2.3/eruda(.web.ts|.ts|.web.tsx|.tsx|.web.mjs|.mjs|.web.js|.js|.web.jsx|.jsx|.web.json|.json|.web.cjs|.cjs|.web.scss|.scss|.web.sass|.sass|.web.css|.css|.web.js|.js|.web.jsx|.jsx|.web.ts|.ts|.web.tsx|.tsx|.web.json|.json)
+  * __replco/static/devtools/eruda/3.2.3/eruda
+    at ModuleResolver.resolveDependency (/home/runner/workspace/.config/npm/node_global/lib/node_modules/expo/node_modules/metro/src/node-haste/DependencyGraph/ModuleResolution.js:114:15)
+    at DependencyGraph.resolveDependency (/home/runner/workspace/.config/npm/node_global/lib/node_modules/expo/node_modules/metro/src/node-haste/DependencyGraph.js:239:43)
+    at /home/runner/workspace/.config/npm/node_global/lib/node_modules/expo/node_modules/metro/src/lib/transformHelpers.js:161:21
+    at Server._resolveRelativePath (/home/runner/workspace/.config/npm/node_global/lib/node_modules/expo/node_modules/metro/src/Server.js:1157:12)
+    at Server._explodedSourceMapForBundleOptions (/home/runner/workspace/.config/npm/node_global/lib/node_modules/expo/node_modules/metro/src/Server.js:1105:35)
+    at async Promise.all (index 0)
+    at Server._symbolicate (/home/runner/workspace/.config/npm/node_global/lib/node_modules/expo/node_modules/metro/src/Server.js:1062:26)
+    at Server._processRequest (/home/runner/workspace/.config/npm/node_global/lib/node_modules/expo/node_modules/metro/src/Server.js:460:7)

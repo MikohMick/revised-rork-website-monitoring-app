@@ -18,19 +18,35 @@ config.transformer = {
   assetPlugins: ['expo-asset/tools/hashAssetFiles'],
 };
 
-// Prevent ENOSPC error by limiting file watching
-config.watchFolders = [__dirname];
+// Prevent ENOSPC error by aggressively limiting file watching
+config.watchFolders = [];
+config.resolver.useWatchman = false;
+
+// Comprehensive block list to prevent watching unnecessary files
 config.resolver.blockList = [
   /\.cache\/.*/,
+  /\.bun\/.*/,
   /node_modules\/.*\/android/,
   /node_modules\/.*\/ios/,
   /node_modules\/.*\/\.gradle/,
   /node_modules\/@react-native\/gradle-plugin/,
+  /node_modules\/.*\/kotlin/,
+  /node_modules\/.*\/java/,
+  /node_modules\/.*\/swift/,
   /\.expo\/.*/,
   /\.git\/.*/,
+  /\.replit/,
+  /replit\.nix/,
 ];
 
-// Disable cache and enable Metro server
+// Disable Metro's built-in file watching to prevent validation warnings
+config.server = {
+  ...config.server,
+  enhanceMiddleware: (middleware) => middleware,
+};
+
+// Disable cache and set minimal workers for Replit environment
 config.resetCache = true;
+config.maxWorkers = 1;
 
 module.exports = config;
