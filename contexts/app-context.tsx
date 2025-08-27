@@ -243,6 +243,8 @@ export const [AppProvider, useApp] = createContextHook(() => {
     },
   });
 
+  const { mutateAsync: updateWebsiteStatusAsync } = updateWebsiteStatusMutation;
+  
   const refreshAllStatuses = useCallback(async () => {
     if (connectionStatus !== 'connected' || !websitesQuery.data?.length) {
       return;
@@ -254,7 +256,7 @@ export const [AppProvider, useApp] = createContextHook(() => {
     const promises = websitesQuery.data.map(async (website: Website) => {
       try {
         const result = await checkWebsiteStatus(website.url);
-        return updateWebsiteStatusMutation.mutateAsync({
+        return updateWebsiteStatusAsync({
           id: website.id,
           status: result.status,
           error: result.error,
@@ -267,7 +269,7 @@ export const [AppProvider, useApp] = createContextHook(() => {
     
     await Promise.allSettled(promises);
     setIsCheckingStatuses(false);
-  }, [connectionStatus, websitesQuery.data, checkWebsiteStatus, updateWebsiteStatusMutation.mutateAsync]);
+  }, [connectionStatus, websitesQuery.data, checkWebsiteStatus, updateWebsiteStatusAsync]);
 
   const filteredWebsites = useMemo(() => {
     return (

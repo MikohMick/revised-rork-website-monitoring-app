@@ -15,7 +15,6 @@ import { Stack, router } from 'expo-router';
 import { RefreshCw, Plus, Wifi, Loader } from 'lucide-react-native';
 import { useApp } from '@/contexts/app-context';
 import { WebsiteCard } from '@/components/website-card';
-
 import { Website } from '@/types/database';
 
 export default function HomeScreen() {

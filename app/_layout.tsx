@@ -3,9 +3,9 @@ import { Stack } from "expo-router";
 import * as SplashScreen from "expo-splash-screen";
 import React, { useEffect } from "react";
 import { GestureHandlerRootView } from "react-native-gesture-handler";
-import { AppProvider } from "@/contexts/app-context";
 import { SafeAreaProvider } from "react-native-safe-area-context";
 import { ErrorBoundary } from "@/components/error-boundary";
+import { AppProvider } from "@/contexts/app-context";
 
 SplashScreen.preventAutoHideAsync();
 
@@ -31,11 +31,11 @@ export default function RootLayout() {
     <QueryClientProvider client={queryClient}>
       <SafeAreaProvider>
         <ErrorBoundary>
-          <AppProvider>
-            <GestureHandlerRootView style={{ flex: 1 }}>
+          <GestureHandlerRootView style={{ flex: 1 }}>
+            <AppProvider>
               <RootLayoutNav />
-            </GestureHandlerRootView>
-          </AppProvider>
+            </AppProvider>
+          </GestureHandlerRootView>
         </ErrorBoundary>
       </SafeAreaProvider>
     </QueryClientProvider>

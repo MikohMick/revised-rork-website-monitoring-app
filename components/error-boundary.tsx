@@ -2,9 +2,10 @@ import React from 'react';
 import { View, Text, StyleSheet, Platform } from 'react-native';
 
 interface ErrorBoundaryState { hasError: boolean; errorMessage?: string }
+interface ErrorBoundaryProps { children: React.ReactNode }
 
-export class ErrorBoundary extends React.Component<React.PropsWithChildren<{}>, ErrorBoundaryState> {
-  constructor(props: React.PropsWithChildren<{}>) {
+export class ErrorBoundary extends React.Component<ErrorBoundaryProps, ErrorBoundaryState> {
+  constructor(props: ErrorBoundaryProps) {
     super(props);
     this.state = { hasError: false };
   }
@@ -34,7 +35,7 @@ export class ErrorBoundary extends React.Component<React.PropsWithChildren<{}>, 
         </View>
       );
     }
-    return this.props.children as React.ReactElement;
+    return this.props.children;
   }
 }
 
