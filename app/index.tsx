@@ -12,7 +12,7 @@ import {
 } from 'react-native';
 import { SafeAreaView, useSafeAreaInsets } from 'react-native-safe-area-context';
 import { Stack, router } from 'expo-router';
-import { Ionicons } from '@expo/vector-icons';
+import { RefreshCw, Plus, Wifi, Loader } from 'lucide-react-native';
 import { useApp } from '@/contexts/app-context';
 import { WebsiteCard } from '@/components/website-card';
 import * as Haptics from 'expo-haptics';
@@ -75,13 +75,13 @@ export default function HomeScreen() {
   const getConnectionIcon = () => {
     switch (connectionStatus) {
       case 'connected':
-        return <Ionicons name="wifi" color="#00ff00" size={18} />;
+        return <Wifi color="#00ff00" size={18} />;
       case 'disconnected':
-        return <Ionicons name="wifi" color="#ff6b6b" size={18} />;
+        return <Wifi color="#ff6b6b" size={18} />;
       case 'checking':
-        return <Ionicons name="ellipse" color="#ffb000" size={18} />;
+        return <Loader color="#ffb000" size={18} />;
       default:
-        return <Ionicons name="wifi" color="#ff6b6b" size={18} />;
+        return <Wifi color="#ff6b6b" size={18} />;
     }
   };
 
@@ -327,7 +327,7 @@ export default function HomeScreen() {
       <SafeAreaView style={styles.container}>
         <Stack.Screen options={{ headerShown: false }} />
         <View style={styles.loadingContainer}>
-          <Ionicons name="ellipse" color="#ffb000" size={32} />
+          <Loader color="#ffb000" size={32} />
           <Text style={styles.loadingText}>
             {connectionStatus === 'checking' ? 'CONNECTING TO DATABASE...' : 'LOADING WEBSITES...'}
           </Text>
@@ -344,7 +344,7 @@ export default function HomeScreen() {
           <Text style={styles.errorText}>[ERROR] Failed to load websites</Text>
           <Text style={styles.errorDetails}>{error.message}</Text>
           <TouchableOpacity style={styles.retryButton} onPress={() => Platform.OS === 'web' ? window.location.reload() : null}>
-            <Ionicons name="refresh" color="#00ff00" size={16} />
+            <RefreshCw color="#00ff00" size={16} />
             <Text style={styles.retryText}>RETRY CONNECTION</Text>
           </TouchableOpacity>
         </View>
@@ -360,7 +360,7 @@ export default function HomeScreen() {
           <Text style={styles.errorText}>[ERROR] Database connection failed</Text>
           <Text style={styles.errorDetails}>Please check your internet connection and try again</Text>
           <TouchableOpacity style={styles.retryButton} onPress={() => Platform.OS === 'web' ? window.location.reload() : null}>
-            <Ionicons name="refresh" color="#00ff00" size={16} />
+            <RefreshCw color="#00ff00" size={16} />
             <Text style={styles.retryText}>RETRY CONNECTION</Text>
           </TouchableOpacity>
         </View>
@@ -385,10 +385,10 @@ export default function HomeScreen() {
         </View>
         <View style={styles.headerActions} testID="headerActions">
           <TouchableOpacity onPress={onRefresh} disabled={refreshing || isCheckingStatuses} style={styles.headerIconButton} hitSlop={{ top: 10, bottom: 10, left: 10, right: 10 }} testID="refreshButton">
-            <Ionicons name="refresh" color={(refreshing || isCheckingStatuses) ? '#808080' : '#00ff00'} size={22} />
+            <RefreshCw color={(refreshing || isCheckingStatuses) ? '#808080' : '#00ff00'} size={22} />
           </TouchableOpacity>
           <TouchableOpacity onPress={() => router.push('/add-website')} style={styles.headerIconButton} hitSlop={{ top: 10, bottom: 10, left: 10, right: 10 }} testID="addHeaderButton">
-            <Ionicons name="add" color="#00ff00" size={24} />
+            <Plus color="#00ff00" size={24} />
           </TouchableOpacity>
         </View>
       </View>
@@ -451,7 +451,7 @@ export default function HomeScreen() {
                 style={styles.addButton}
                 onPress={() => router.push('/add-website')}
               >
-                <Ionicons name="add" color="#00ff00" size={16} />
+                <Plus color="#00ff00" size={16} />
                 <Text style={styles.addButtonText}>ADD WEBSITE</Text>
               </TouchableOpacity>
             )}
@@ -478,7 +478,7 @@ export default function HomeScreen() {
         testID="fabAdd"
         hitSlop={{ top: 8, bottom: 8, left: 8, right: 8 }}
       >
-        <Ionicons name="add" color="#000000" size={28} />
+        <Plus color="#000000" size={28} />
       </TouchableOpacity>
     </SafeAreaView>
   );

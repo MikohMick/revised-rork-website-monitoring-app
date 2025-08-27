@@ -11,7 +11,7 @@ import {
 } from 'react-native';
 import { SafeAreaView, useSafeAreaInsets } from 'react-native-safe-area-context';
 import { Stack, router } from 'expo-router';
-import { Ionicons } from '@expo/vector-icons';
+import { Plus, X, Terminal } from 'lucide-react-native';
 import { useApp } from '@/contexts/app-context';
 import * as Haptics from 'expo-haptics';
 
@@ -113,7 +113,7 @@ export default function AddWebsiteScreen() {
               onPress={handleSave}
               disabled={isAddingWebsite}
             >
-              <Ionicons name="terminal" color={isAddingWebsite ? '#555555' : '#00ff00'} size={16} />
+              <Terminal color={isAddingWebsite ? '#555555' : '#00ff00'} size={16} />
               <Text
                 style={[
                   styles.saveButtonText,
@@ -151,7 +151,7 @@ export default function AddWebsiteScreen() {
                     style={styles.removeButton}
                     onPress={() => removeWebsiteForm(index)}
                   >
-                    <Ionicons name="close" size={16} color="#ff6b6b" />
+                    <X size={16} color="#ff6b6b" />
                   </TouchableOpacity>
                 )}
               </View>
@@ -193,7 +193,7 @@ export default function AddWebsiteScreen() {
             style={styles.addMoreButton}
             onPress={addWebsiteForm}
           >
-            <Ionicons name="add" size={16} color="#00ff00" />
+            <Plus size={16} color="#00ff00" />
             <Text style={styles.addMoreText}>
               ADD_TARGET
             </Text>
