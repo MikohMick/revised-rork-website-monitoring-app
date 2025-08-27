@@ -24,12 +24,12 @@ export default function HomeScreen() {
     connectionStatus,
     searchQuery,
     setSearchQuery,
-    websites,
     filteredWebsites,
     error,
-    checkWebsiteStatus,
-    updateWebsiteStatus,
+    refreshAllStatuses,
     deleteWebsite,
+    isCheckingStatuses,
+    isLoading,
   } = useApp();
 
   const [refreshing, setRefreshing] = useState<boolean>(false);
@@ -50,19 +50,7 @@ export default function HomeScreen() {
       Haptics.impactAsync(Haptics.ImpactFeedbackStyle.Light);
     }
     setRefreshing(true);
-    console.log('[Terminal] > refresh all');
-    for (const website of websites) {
-      try {
-        const result = await checkWebsiteStatus(website.url);
-        updateWebsiteStatus({
-          id: website.id,
-          status: result.status,
-          error: result.error,
-        });
-      } catch (error) {
-        console.log('[Terminal] Error checking website status:', error);
-      }
-    }
+    await refreshAllStatuses();
     setRefreshing(false);
   };
 
@@ -118,7 +106,7 @@ export default function HomeScreen() {
     header: {
       backgroundColor: '#000000',
       paddingHorizontal: 16,
-      paddingVertical: 8,
+      paddingVertical: 4,
       borderBottomWidth: 1,
       borderBottomColor: '#333333',
     },
@@ -126,7 +114,7 @@ export default function HomeScreen() {
       flexDirection: 'row',
       justifyContent: 'space-between',
       alignItems: 'center',
-      marginBottom: 6,
+      marginBottom: 4,
     },
     headerTitle: {
       fontSize: 20,
@@ -158,7 +146,7 @@ export default function HomeScreen() {
     headerActions: {
       flexDirection: 'row',
       alignItems: 'center',
-      marginTop: 6,
+      marginTop: 4,
     },
     headerIconButton: {
       paddingHorizontal: 12,
@@ -285,6 +273,49 @@ export default function HomeScreen() {
       shadowOffset: { width: 0, height: 4 },
       elevation: 6,
     },
+    loadingContainer: {
+      flex: 1,
+      justifyContent: 'center',
+      alignItems: 'center',
+      paddingHorizontal: 32,
+    },
+    loadingText: {
+      fontSize: 14,
+      fontFamily: Platform.select({ ios: 'Courier New', android: 'monospace', default: 'monospace' }),
+      color: '#ffb000',
+      textAlign: 'center',
+      marginTop: 16,
+    },
+    errorContainer: {
+      flex: 1,
+      justifyContent: 'center',
+      alignItems: 'center',
+      paddingHorizontal: 32,
+    },
+    errorDetails: {
+      fontSize: 12,
+      fontFamily: Platform.select({ ios: 'Courier New', android: 'monospace', default: 'monospace' }),
+      color: '#808080',
+      textAlign: 'center',
+      marginTop: 8,
+      marginBottom: 24,
+    },
+    retryButton: {
+      flexDirection: 'row',
+      alignItems: 'center',
+      backgroundColor: '#111111',
+      borderWidth: 1,
+      borderColor: '#00ff00',
+      paddingHorizontal: 16,
+      paddingVertical: 10,
+      gap: 8,
+    },
+    retryText: {
+      fontSize: 14,
+      fontFamily: Platform.select({ ios: 'Courier New', android: 'monospace', default: 'monospace' }),
+      color: '#00ff00',
+      fontWeight: 'bold' as const,
+    },
   });
 
   const onlineCount = filteredWebsites.filter((w: Website) => w.status === 'online').length;
@@ -292,12 +323,47 @@ export default function HomeScreen() {
   const checkingCount = filteredWebsites.filter((w: Website) => w.status === 'checking').length;
   const totalCount = filteredWebsites.length;
 
+  if (connectionStatus === 'checking' || (connectionStatus === 'connected' && isLoading)) {
+    return (
+      <SafeAreaView style={styles.container}>
+        <Stack.Screen options={{ headerShown: false }} />
+        <View style={styles.loadingContainer}>
+          <Activity color="#ffb000" size={32} />
+          <Text style={styles.loadingText}>
+            {connectionStatus === 'checking' ? 'CONNECTING TO DATABASE...' : 'LOADING WEBSITES...'}
+          </Text>
+        </View>
+      </SafeAreaView>
+    );
+  }
+
   if (error) {
     return (
-      <SafeAreaView style={styles.container} edges={['top','left','right','bottom']}>
+      <SafeAreaView style={styles.container}>
         <Stack.Screen options={{ headerShown: false }} />
-        <View style={styles.container}>
-          <Text style={styles.errorText}>[ERROR] Failed to load websites: {error.message}</Text>
+        <View style={styles.errorContainer}>
+          <Text style={styles.errorText}>[ERROR] Failed to load websites</Text>
+          <Text style={styles.errorDetails}>{error.message}</Text>
+          <TouchableOpacity style={styles.retryButton} onPress={() => Platform.OS === 'web' ? window.location.reload() : null}>
+            <RefreshCw color="#00ff00" size={16} />
+            <Text style={styles.retryText}>RETRY CONNECTION</Text>
+          </TouchableOpacity>
+        </View>
+      </SafeAreaView>
+    );
+  }
+
+  if (connectionStatus === 'disconnected') {
+    return (
+      <SafeAreaView style={styles.container}>
+        <Stack.Screen options={{ headerShown: false }} />
+        <View style={styles.errorContainer}>
+          <Text style={styles.errorText}>[ERROR] Database connection failed</Text>
+          <Text style={styles.errorDetails}>Please check your internet connection and try again</Text>
+          <TouchableOpacity style={styles.retryButton} onPress={() => Platform.OS === 'web' ? window.location.reload() : null}>
+            <RefreshCw color="#00ff00" size={16} />
+            <Text style={styles.retryText}>RETRY CONNECTION</Text>
+          </TouchableOpacity>
         </View>
       </SafeAreaView>
     );
@@ -307,7 +373,7 @@ export default function HomeScreen() {
     <SafeAreaView style={styles.container}>
       <Stack.Screen options={{ headerShown: false }} />
       
-      <View style={[styles.header, { paddingTop: insets.top, paddingLeft: Math.max(16, insets.left), paddingRight: Math.max(16, insets.right) }]} testID="header">
+      <View style={[styles.header, { paddingTop: Math.max(4, insets.top), paddingLeft: Math.max(16, insets.left), paddingRight: Math.max(16, insets.right) }]} testID="header">
         <View style={styles.headerTop} testID="headerTop">
           <Text style={styles.headerTitle}>WEBSITE_MONITOR v1.0</Text>
           <View style={styles.headerInfo} testID="headerInfo">
@@ -319,8 +385,8 @@ export default function HomeScreen() {
           </View>
         </View>
         <View style={styles.headerActions} testID="headerActions">
-          <TouchableOpacity onPress={onRefresh} disabled={refreshing} style={styles.headerIconButton} hitSlop={{ top: 10, bottom: 10, left: 10, right: 10 }} testID="refreshButton">
-            <RefreshCw color={refreshing ? '#808080' : '#00ff00'} size={22} />
+          <TouchableOpacity onPress={onRefresh} disabled={refreshing || isCheckingStatuses} style={styles.headerIconButton} hitSlop={{ top: 10, bottom: 10, left: 10, right: 10 }} testID="refreshButton">
+            <RefreshCw color={(refreshing || isCheckingStatuses) ? '#808080' : '#00ff00'} size={22} />
           </TouchableOpacity>
           <TouchableOpacity onPress={() => router.push('/add-website')} style={styles.headerIconButton} hitSlop={{ top: 10, bottom: 10, left: 10, right: 10 }} testID="addHeaderButton">
             <Plus color="#00ff00" size={24} />
@@ -344,7 +410,7 @@ export default function HomeScreen() {
         contentContainerStyle={{ paddingBottom: 96 + insets.bottom, paddingRight: Math.max(16, insets.right) }}
         refreshControl={
           <RefreshControl 
-            refreshing={refreshing} 
+            refreshing={refreshing || isCheckingStatuses} 
             onRefresh={onRefresh}
             tintColor="#00ff00"
             colors={['#00ff00']}
