@@ -1,3 +1,4 @@
+
 const { getDefaultConfig } = require('expo/metro-config');
 
 const config = getDefaultConfig(__dirname);
@@ -17,7 +18,19 @@ config.transformer = {
   assetPlugins: ['expo-asset/tools/hashAssetFiles'],
 };
 
-// Remove cache and enable Metro server
+// Prevent ENOSPC error by limiting file watching
+config.watchFolders = [__dirname];
+config.resolver.blockList = [
+  /\.cache\/.*/,
+  /node_modules\/.*\/android/,
+  /node_modules\/.*\/ios/,
+  /node_modules\/.*\/\.gradle/,
+  /node_modules\/@react-native\/gradle-plugin/,
+  /\.expo\/.*/,
+  /\.git\/.*/,
+];
+
+// Disable cache and enable Metro server
 config.resetCache = true;
 
 module.exports = config;
