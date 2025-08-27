@@ -9,6 +9,10 @@ config.resolver.alias = {
   'react-native': 'react-native-web',
 };
 
+// Block problematic Replit imports
+config.resolver.resolverMainFields = ['react-native', 'browser', 'main'];
+config.resolver.disableHierarchicalLookup = true;
+
 // Add resolver extensions
 config.resolver.sourceExts = [...config.resolver.sourceExts, 'js', 'jsx', 'ts', 'tsx', 'json'];
 
@@ -37,6 +41,10 @@ config.resolver.blockList = [
   /\.git\/.*/,
   /\.replit/,
   /replit\.nix/,
+  // Block Replit devtools to prevent module resolution errors
+  /__replco\/.*/,
+  /.*__replco.*/,
+  /.*\/devtools\/eruda\/.*/,
 ];
 
 // Disable Metro's built-in file watching to prevent validation warnings
