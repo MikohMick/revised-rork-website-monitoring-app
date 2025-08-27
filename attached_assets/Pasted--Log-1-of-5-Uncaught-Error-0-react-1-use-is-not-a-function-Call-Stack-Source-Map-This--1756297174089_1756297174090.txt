@@ -1,0 +1,46 @@
+
+Log 1 of 5
+
+Uncaught Error
+(0 , react_1.use) is not a function
+Call Stack
+
+Source Map
+This call stack is not symbolicated. Some features are unavailable such as viewing the function name or tapping to open files.
+useExpoRouterStore
+https://985bfe6d-a044-46af-8df4-dae554a8450e-00-1vsu4siey780p.spock.replit.dev:3000/node_modules/expo-router/entry.bundle:74039:52
+useLinking
+https://985bfe6d-a044-46af-8df4-dae554a8450e-00-1vsu4siey780p.spock.replit.dev:3000/node_modules/expo-router/entry.bundle:87624:57
+NavigationContainerInner
+https://985bfe6d-a044-46af-8df4-dae554a8450e-00-1vsu4siey780p.spock.replit.dev:3000/node_modules/expo-router/entry.bundle:91213:37
+renderWithHooks
+https://985bfe6d-a044-46af-8df4-dae554a8450e-00-1vsu4siey780p.spock.replit.dev:3000/node_modules/expo-router/entry.bundle:21027:24
+updateForwardRef
+https://985bfe6d-a044-46af-8df4-dae554a8450e-00-1vsu4siey780p.spock.replit.dev:3000/node_modules/expo-router/entry.bundle:24281:26
+beginWork
+https://985bfe6d-a044-46af-8df4-dae554a8450e-00-1vsu4siey780p.spock.replit.dev:3000/node_modules/expo-router/entry.bundle:26342:22
+beginWork$1
+https://985bfe6d-a044-46af-8df4-dae554a8450e-00-1vsu4siey780p.spock.replit.dev:3000/node_modules/expo-router/entry.bundle:31265:20
+performUnitOfWork
+https://985bfe6d-a044-46af-8df4-dae554a8450e-00-1vsu4siey780p.spock.replit.dev:3000/node_modules/expo-router/entry.bundle:30535:18
+workLoopSync
+https://985bfe6d-a044-46af-8df4-dae554a8450e-00-1vsu4siey780p.spock.replit.dev:3000/node_modules/expo-router/entry.bundle:30458:11
+renderRootSync
+https://985bfe6d-a044-46af-8df4-dae554a8450e-00-1vsu4siey780p.spock.replit.dev:3000/node_modules/expo-router/entry.bundle:30431:13
+Showing all frames
+Component Stack
+
+Source Map
+This call stack is not symbolicated. Some features are unavailable such as viewing the function name or tapping to open files.
+NavigationContainerInner
+https://985bfe6d-a044-46af-8df4-dae554a8450e-00-1vsu4siey780p.spock.replit.dev:3000/node_modules/expo-router/entry.bundle:91194:5
+ContextNavigator
+https://985bfe6d-a044-46af-8df4-dae554a8450e-00-1vsu4siey780p.spock.replit.dev:3000/node_modules/expo-router/entry.bundle:90916:5
+ExpoRoot
+https://985bfe6d-a044-46af-8df4-dae554a8450e-00-1vsu4siey780p.spock.replit.dev:3000/node_modules/expo-router/entry.bundle:90865:14
+_HelmetProvider
+https://985bfe6d-a044-46af-8df4-dae554a8450e-00-1vsu4siey780p.spock.replit.dev:3000/node_modules/expo-router/entry.bundle:227264:7
+LogBoxStateSubscription
+https://985bfe6d-a044-46af-8df4-dae554a8450e-00-1vsu4siey780p.spock.replit.dev:3000/node_modules/expo-router/entry.bundle:3945:9
+AppContainer
+https://985bfe6d-a044-46af-8df4-dae554a8450e-00-1vsu4siey780p.spock.replit.dev:3000/node_modules/expo-router/entry.bundle:77220:5
